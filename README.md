@@ -3,7 +3,7 @@ After reading through the whole Minecraft APK, I can tell you that constructing 
 
 ## ▶▶✔✅✅🔵🔴 CLICK HERE TO DOWNLOAD :- 
 
-                                                                               ## OR
+###                                                   OR
 
 
 ![button_click-here-to-download](https://github.com/user-attachments/assets/32c50778-558f-48fc-9b1c-813d20f86940)
