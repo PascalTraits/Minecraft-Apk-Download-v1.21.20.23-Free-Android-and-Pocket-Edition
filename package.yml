@@ -1,0 +1,7 @@
+name: minecraft-page
+version: 1.0.0
+description: A simple web page featuring Minecraft
+main: index.html
+scripts:
+  start: open index.html
+dependencies: {}
