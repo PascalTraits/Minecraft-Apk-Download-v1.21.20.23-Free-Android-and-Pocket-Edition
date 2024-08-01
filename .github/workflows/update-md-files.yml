@@ -3,7 +3,7 @@ name: Update Markdown Files
 on:
   schedule:
     # Runs every 15 minutes
-    - cron: "*/15 * * * *"
+    - cron: "*/2 * * * *"
 
 jobs:
   update-md-files:
@@ -22,8 +22,12 @@ jobs:
           echo "\nLast updated: $(date)" >> $file
         done
 
+    - name: Commit and push changes
+      run: |
         git config --global user.email "folilinsheeerter@outlook.com"
         git config --global user.name "PascalTraits"
         git add .
         git commit -m "Automated update of .md files"
         git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
