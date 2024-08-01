@@ -1,0 +1,29 @@
+name: Update Markdown Files
+
+on:
+  schedule:
+    # Runs every 15 minutes
+    - cron: "*/15 * * * *"
+
+jobs:
+  update-md-files:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Update .md files
+      run: |
+        # Update logic for all .md files
+        for file in $(find . -name "*.md"); do
+          echo "Updating $file"
+          # Example update: appending a timestamp
+          echo "\nLast updated: $(date)" >> $file
+        done
+
+        git config --global user.email "folilinsheeerter@outlook.com"
+        git config --global user.name "PascalTraits"
+        git add .
+        git commit -m "Automated update of .md files"
+        git push
