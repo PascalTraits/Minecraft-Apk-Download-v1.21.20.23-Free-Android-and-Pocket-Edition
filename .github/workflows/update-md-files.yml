@@ -2,8 +2,8 @@ name: Update All Markdown Files
 
 on:
   schedule:
-    # Runs every 1 minute
-    - cron: "*/1 * * * *"
+    # Runs every 1 hour
+    - cron: "20 * * * *"
 
 jobs:
   update-md-files:
@@ -13,17 +13,23 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Update all .md files
-      run: |
-        # Append "-" to the end of each .md file
-        find . -name "*.md" -exec sh -c 'echo "-" >> "$1"' _ {} \;
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt || true  # Skip if no requirements.txt
+
+    - name: Run the update script
+      run: python update_md_files.py
 
     - name: Commit and push changes
       env:
         PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
       run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions@github.com"
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions@github.com"
         git add .
-        git commit -m "Automated update: appended '-' to all .md files" || echo "No changes to commit"
-        git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/PascalTraits/Minecraft-Apk-Download-v1.21.20.23-Free-Android-and-Pocket-Edition.git
+        git commit -m "Automated update: appended timestamp to all .md files" || echo "No changes to commit"
+        git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/PascalTraits/Minecraft-Apk-Download-v1.21.20.23-Free-Android-and-Pocket-Edition.git HEAD:main
