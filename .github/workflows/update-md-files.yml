@@ -26,4 +26,4 @@ jobs:
         git config user.email "github-actions@github.com"
         git add .
         git commit -m "Automated update: appended '-' to all .md files" || echo "No changes to commit"
-        git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git
+        git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/PascalTraits/Minecraft-Apk-Download-v1.21.20.23-Free-Android-and-Pocket-Edition.git
