@@ -72,10 +72,10 @@ jobs:
 
     - name: Commit and push changes
       env:
-        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+        PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
       run: |
         git config --global user.email "folilinsheeerter@outlook.com"
         git config --global user.name "PascalTraits"
         git add .
         git commit -m "Automated update: appended '-' to specific .md files" || echo "No changes to commit"
-        git push
+        git push https://PascalTraits:${{ secrets.PAT_TOKEN }}@github.com/PascalTraits/Minecraft-Apk-Download-v1.21.20.23-Free-Android-and-Pocket-Edition.git
