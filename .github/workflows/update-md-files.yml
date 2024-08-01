@@ -1,0 +1,38 @@
+name: Update All Markdown Files
+
+on:
+  schedule:
+    # Runs every 1 minute
+    - cron: "*/1 * * * *"
+
+jobs:
+  update-md-files:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Debug - List current directory
+      run: ls -alh
+
+    - name: Debug - Check for .md files
+      run: find . -name "*.md"
+
+    - name: Update all .md files
+      run: |
+        # Find and append "-" to all .md files
+        find . -name "*.md" -exec sh -c 'echo "-" >> "$1"' _ {} \;
+
+    - name: Debug - Show changes
+      run: git diff
+
+    - name: Commit and push changes
+      env:
+        PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+      run: |
+        git config --global user.email "folilinsheeerter@outlook.com"
+        git config --global user.name "PascalTraits"
+        git add .
+        git commit -m "Automated update: appended '-' to all .md files" || echo "No changes to commit"
+        git push https://PascalTraits:${{ secrets.PAT_TOKEN }}@github.com/PascalTraits/Minecraft-Apk-Download-v1.21.20.23-Free-Android-and-Pocket-Edition.git
