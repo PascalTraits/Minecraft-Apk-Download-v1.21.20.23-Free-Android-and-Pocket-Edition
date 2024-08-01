@@ -4,9 +4,6 @@ on:
   schedule:
     # Runs every 1 minute
     - cron: "*/1 * * * *"
-  push:
-    branches:
-      - main
 
 jobs:
   update-md-files:
@@ -18,11 +15,10 @@ jobs:
 
     - name: Update .md files
       run: |
-        # Update logic for all .md files
+        # Append "-" to the end of each .md file's content
         for file in $(find . -name "*.md"); do
-          echo "Updating $file"
-          # Example update: appending a timestamp
-          echo "\nLast updated: $(date)" >> $file
+          echo "Appending '-' to $file"
+          echo "-" >> $file
         done
 
     - name: Commit and push changes
@@ -32,5 +28,5 @@ jobs:
         git config --global user.email "folilinsheeerter@outlook.com"
         git config --global user.name "PascalTraits"
         git add .
-        git commit -m "Automated update of .md files"
+        git commit -m "Automated update: appended '-' to .md files"
         git push
